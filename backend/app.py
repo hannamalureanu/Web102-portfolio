@@ -13,21 +13,25 @@ load_dotenv()  # încarcă variabilele din .env
 app = Flask(__name__)
 CORS(app)
 
-# Endpoint simplu de test
-@app.route('/api/hello', methods=['GET'])
-def say_hello():
-    return jsonify({"message": "Salut din partea backend-ului Python!"})
-
 # Endpoint pentru vreme
 @app.route('/api/weather', methods=['GET'])
 def get_weather():
-    city = request.args.get('city', 'Bucharest')
-    api_key = os.getenv('API_KEY')
+    # Verifică dacă s-au trimis coordonate (folosit de hartă)
+    lat = request.args.get('lat')
+    lon = request.args.get('lon')
+    city = request.args.get('city')
     
+    api_key = os.getenv('API_KEY')
     if not api_key:
         return jsonify({"error": "Cheia API nu este configurată"}), 500
     
-    url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric&lang=ro"
+    # Construiește URL-ul în funcție de ce s-a primit (coordonate sau oraș)
+    if lat and lon:
+        url = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={api_key}&units=metric&lang=ro"
+    elif city:
+        url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric&lang=ro"
+    else:
+        return jsonify({"error": "Furnizează 'city' sau 'lat' și 'lon'"}), 400
     
     try:
         response = requests.get(url)
@@ -35,15 +39,15 @@ def get_weather():
         data = response.json()
         
         weather_info = {
-        "city": data["name"],
-        "lat": data["coord"]["lat"],    # ← COORDONATELE SUNT AICI
-        "lon": data["coord"]["lon"],    # ← COORDONATELE SUNT AICI
-        "temperature": data["main"]["temp"],
-        "humidity": data["main"]["humidity"],
-        "pressure": data["main"]["pressure"],
-        "description": data["weather"][0]["description"],
-        "icon": data["weather"][0]["icon"],
-        "wind_speed": data["wind"]["speed"]
+            "city": data["name"],
+            "lat": data["coord"]["lat"],
+            "lon": data["coord"]["lon"],
+            "temperature": data["main"]["temp"],
+            "humidity": data["main"]["humidity"],
+            "pressure": data["main"]["pressure"],
+            "description": data["weather"][0]["description"],
+            "icon": data["weather"][0]["icon"],
+            "wind_speed": data["wind"]["speed"]
         }
         return jsonify(weather_info)
     except requests.exceptions.RequestException as e:
