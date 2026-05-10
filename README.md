@@ -29,7 +29,6 @@ Proiect full-stack ce integrează un portofoliu personal, aplicație meteo, acti
 - Card meteo frumos stilizat, cu buton de închidere.
 
 ### ⭐ Modul V – Cititor PDF (Double-page) – **EXTRA / BONUS**
-> Acest modul depășește cerințele de bază și adaugă o funcționalitate complexă de citit PDF ca o carte.
 
 - **Încărcare PDF** local.
 - **Extrage automat numărul total de pagini** folosind `pdfjs-dist`.
