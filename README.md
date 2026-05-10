@@ -1,4 +1,4 @@
-# 🌐 Portofoliu interactiv – Web102 / Python 101
+# 🌐 Portofoliu interactiv – Web102 
 
 Proiect full-stack ce integrează un portofoliu personal, aplicație meteo, activitate GitHub, diplome, 3 layout-uri comutabile și **un cititor PDF avansat (double-page, citate, persistentă) – implementat ca extra / bonus**. Dezvoltat cu **Flask** (backend) și **React** (frontend).
 
