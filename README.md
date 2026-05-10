@@ -31,7 +31,7 @@ Proiect full-stack ce integrează un portofoliu personal, aplicație meteo, acti
 - Click pe marker → afișează date meteo de la OpenWeatherMap (temperatură, umiditate, descriere, vânt, iconiță).
 - Card meteo frumos stilizat, cu buton de închidere.
 
-### ⭐ Modul V – Cititor PDF (Double-page) – **EXTRA / BONUS**
+### ⭐ Modul V – Cititor PDF (Double-page) – **EXTRA**
 
 - **Încărcare PDF** local.
 - **Extrage automat numărul total de pagini** folosind `pdfjs-dist`.
