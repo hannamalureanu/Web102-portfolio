@@ -11,6 +11,9 @@ Proiect full-stack ce integrează un portofoliu personal, aplicație meteo, acti
 - Grid de proiecte (biscuiți) cu imagine, titlu, descriere scurtă.
 - La hover: descriere detaliată + efect de mărire.
 - Click pe card → deschide link-ul proiectului (ex. GitHub repo).
+- Dropdown pentru a alege utilizatorul (`hannamalureanu` sau `teodoraduca507`).
+- Afișează ultimele 10 commit‑uri din toate repository‑urile publice, în ordine cronologică descrescătoare.
+- Link direct către commit pe GitHub.
 
 ### Modul II – CV & Evenimente
 - Carusel automat cu diplome / participări (autoscroll la 3 secunde).
@@ -38,11 +41,6 @@ Proiect full-stack ce integrează un portofoliu personal, aplicație meteo, acti
 - **Citate** – utilizatorul selectează text din pagină (copiază manual), lipește în câmp, alege pagina (stânga / dreapta) și salvează.
 - **Listă citate salvate** cu posibilitate de ștergere.
 - **Persistență completă** – la reîncărcarea paginii, utilizatorul revine la ultima pagină vizualizată și își vede citatele.
-
-### Extra – Activitate GitHub (commits)
-- Dropdown pentru a alege utilizatorul (`hannamalureanu` sau `teodoraduca507`).
-- Afișează ultimele 10 commit‑uri din toate repository‑urile publice, în ordine cronologică descrescătoare.
-- Link direct către commit pe GitHub.
 
 ---
 
