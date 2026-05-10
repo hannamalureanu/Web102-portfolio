@@ -42,7 +42,7 @@ Proiect full-stack ce integrează un portofoliu personal, aplicație meteo, acti
 - **Listă citate salvate** cu posibilitate de ștergere.
 - **Persistență completă** – la reîncărcarea paginii, utilizatorul revine la ultima pagină vizualizată și își vede citatele.
 
----
+----
 
 ## 🛠️ Tehnologii utilizate
 
