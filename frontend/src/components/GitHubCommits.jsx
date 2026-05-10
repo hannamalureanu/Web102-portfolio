@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const GitHubCommits = () => {
-  const users = ['hannamalureanu', 'teodoraduca507'];
+  const users = ['hannamalureanu', 'teodoraduca507-prog'];
   const [selectedUser, setSelectedUser] = useState(users[0]);
   const [commits, setCommits] = useState([]);
   const [loading, setLoading] = useState(false);
